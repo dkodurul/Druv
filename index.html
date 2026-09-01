@@ -30,46 +30,6 @@
             letter-spacing: 1px;
         }
 
-        /* --- Entry Overlay --- */
-        #entry-screen {
-            position: fixed;
-            top: 0; left: 0; width: 100vw; height: 100vh;
-            background-color: var(--peacock);
-            color: var(--jasmine);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            transition: opacity 0.8s ease, visibility 0.8s;
-            cursor: pointer;
-        }
-
-        #entry-screen h1 { 
-            font-size: 3.5rem; 
-            margin-bottom: 20px; 
-            color: var(--marigold);
-        }
-        
-        .tap-pulse {
-            animation: pulse 2s infinite;
-            font-size: 1.1rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            font-weight: 700;
-            background: var(--marigold);
-            color: white;
-            padding: 12px 30px;
-            border-radius: 50px;
-            box-shadow: 0 10px 20px rgba(242, 100, 25, 0.3);
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(242, 100, 25, 0.7); }
-            70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(242, 100, 25, 0); }
-            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(242, 100, 25, 0); }
-        }
-
         /* --- Animations --- */
         .fade-in {
             opacity: 0;
@@ -83,17 +43,15 @@
 
         /* --- Hero Section --- */
         .hero {
-            height: 50vh;
+            padding: 60px 20px 20px 20px;
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
             align-items: center;
             text-align: center;
-            padding: 20px;
-            padding-bottom: 40px;
         }
         .hero h1 { 
-            font-size: 4.5rem; 
+            font-size: 4rem; 
             color: var(--peacock); 
             margin: 10px 0; 
             line-height: 1.1;
@@ -110,23 +68,24 @@
         .single-photo-container {
             width: 100vw;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
-            padding-bottom: 60px;
+            padding-bottom: 40px;
         }
 
         /* Quirky Paisley/Mango shape for the photo */
         .photo-wrapper {
             width: 85%;
-            max-width: 450px;
-            height: 60vh;
-            max-height: 600px;
+            max-width: 400px;
+            height: 55vh;
+            max-height: 550px;
             position: relative;
-            border-radius: 80px 15px 80px 15px; /* The quirky shape! */
+            border-radius: 80px 15px 80px 15px; 
             overflow: hidden;
-            box-shadow: 15px 15px 0px var(--marigold); /* Hard shadow for neatness */
+            box-shadow: 15px 15px 0px var(--marigold); 
             border: 4px solid var(--peacock);
             background: white;
+            margin-bottom: 30px;
         }
 
         .photo-wrapper img {
@@ -137,45 +96,46 @@
         }
 
         @keyframes softFade {
-            0% { transform: scale(1) rotate(0deg); filter: brightness(0.9); }
+            0% { transform: scale(1) rotate(0deg); filter: brightness(0.95); }
             100% { transform: scale(1.05) rotate(1deg); filter: brightness(1.05); }
         }
 
-        .name-overlay {
-            position: absolute;
-            bottom: 25px;
-            left: -10px;
-            background: var(--jasmine);
-            padding: 15px 25px;
-            border-radius: 0 20px 20px 0;
-            color: var(--peacock);
-            border-left: 8px solid var(--rani-pink);
-            box-shadow: 5px 5px 15px rgba(0,0,0,0.15);
+        /* --- Cute Quote --- */
+        .cute-quote {
+            font-family: 'Calistoga', serif;
+            font-size: 1.6rem;
+            color: var(--rani-pink);
+            text-align: center;
+            max-width: 80%;
+            margin: 0;
+            line-height: 1.4;
         }
-
-        .name-overlay h2 { margin: 0; font-size: 2.2rem; }
-        .name-overlay p { margin: 5px 0 0; font-size: 1rem; font-weight: 600; color: var(--marigold); }
 
         /* --- Events Section --- */
         .events {
             padding: 40px 20px;
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             text-align: center;
         }
 
         .events h2 {
-            font-size: 3.5rem;
+            font-size: 3rem;
             color: var(--rani-pink);
-            margin-bottom: 50px;
+            margin-bottom: 40px;
         }
 
-        /* Quirky event cards matching the photo shape */
+        .events-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        /* Quirky event cards */
         .event-card {
             background: white;
             padding: 40px 30px;
             border-radius: 40px 10px 40px 10px; 
-            margin-bottom: 40px;
             border: 3px solid var(--peacock);
             box-shadow: 8px 8px 0px var(--peacock);
             transition: transform 0.3s ease;
@@ -188,13 +148,13 @@
 
         .event-card h3 { 
             color: var(--marigold); 
-            font-size: 2.5rem; 
+            font-size: 2.2rem; 
             margin-top: 0; 
             margin-bottom: 10px;
         }
         
         .event-card p { 
-            font-size: 1.2rem; 
+            font-size: 1.1rem; 
             margin: 12px 0; 
         }
         
@@ -211,7 +171,7 @@
 
         /* --- Map Button Section --- */
         .map-section {
-            margin-top: 60px;
+            margin-top: 50px;
             margin-bottom: 40px;
             text-align: center;
         }
@@ -223,10 +183,10 @@
             background-color: var(--rani-pink);
             color: white;
             text-decoration: none;
-            padding: 18px 40px;
+            padding: 16px 35px;
             border-radius: 50px;
             font-family: 'Calistoga', serif;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             box-shadow: 0 8px 20px rgba(214, 40, 40, 0.3);
             transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
         }
@@ -238,8 +198,8 @@
         }
 
         .map-icon {
-            width: 28px;
-            height: 28px;
+            width: 24px;
+            height: 24px;
             fill: white;
         }
 
@@ -263,57 +223,63 @@
             transform: translate(2px, 2px);
             box-shadow: 2px 2px 0px var(--peacock);
         }
+
+        /* --- Desktop Responsive Adjustments --- */
+        @media (min-width: 768px) {
+            .hero h1 { font-size: 5rem; }
+            .cute-quote { font-size: 2rem; }
+            .events-grid { 
+                flex-direction: row; 
+                justify-content: center; 
+            }
+            .event-card { 
+                flex: 1; 
+            }
+        }
     </style>
 </head>
 <body>
-
-    <!-- Entry Screen -->
-    <div id="entry-screen">
-        <h1 class="quirky-font">Namaskaram!</h1>
-        <div class="tap-pulse">Tap to Open</div>
-    </div>
 
     <!-- Background Music -->
     <audio id="bg-audio" loop>
         <source src="./assets/music.mp3" type="audio/mpeg">
     </audio>
 
-    <button id="music-btn">🎵</button>
+    <button id="music-btn">🎵 Play Music</button>
 
     <!-- Header / Intro -->
     <section class="hero fade-in">
-        <p>Filter Kaapi & A New Beginning</p>
-        <h1>Durga & Ruvanthika </h1>
+        <p> Getting ready forever </p>
+        <h1>[Bride] & [Groom]</h1>
         <p>October 13 & 14, 2026</p>
     </section>
 
-    <!-- Single Photo Section -->
+    <!-- Single Photo & Quote Section -->
     <section class="single-photo-container fade-in">
         <div class="photo-wrapper">
             <img src="./assets/couple.jpg" alt="Couple">
-            <div class="name-overlay">
-                <h2> Durga & Ruvi </h2>
-                <p>Ready for forever</p>
-            </div>
         </div>
+        <p class="cute-quote fade-in">"Two souls, one beautiful journey."</p>
     </section>
 
     <!-- Events Section -->
     <section class="events">
         <h2 class="fade-in">Join the Sandadi</h2>
         
-        <div class="event-card fade-in">
-            <h3>Reception</h3>
-            <p><strong>Date:</strong> October 13, 2026</p>
-            <p><strong>Time:</strong> 7:00 PM Onwards</p>
-            <div class="venue-highlight">📍 Tamil Nadu Police Convention Centre, Avadi</div>
-        </div>
+        <div class="events-grid">
+            <div class="event-card fade-in">
+                <h3>Reception</h3>
+                <p><strong>Date:</strong> October 13, 2026</p>
+                <p><strong>Time:</strong> 7:00 PM Onwards</p>
+                <div class="venue-highlight">📍 Tamil Nadu Police Convention Centre, Avadi</div>
+            </div>
 
-        <div class="event-card fade-in">
-            <h3>Muhurtham</h3>
-            <p><strong>Date:</strong> October 14, 2026</p>
-            <p><strong>Time:</strong> 6:00 AM to 7:30 AM</p>
-            <div class="venue-highlight">📍 Tamil Nadu Police Convention Centre, Avadi</div>
+            <div class="event-card fade-in">
+                <h3>Muhurtham</h3>
+                <p><strong>Date:</strong> October 14, 2026</p>
+                <p><strong>Time:</strong> 6:00 AM to 7:30 AM</p>
+                <div class="venue-highlight">📍 Tamil Nadu Police Convention Centre, Avadi</div>
+            </div>
         </div>
 
         <!-- Google Maps Button -->
@@ -328,31 +294,18 @@
     </section>
 
     <script>
-        // --- Audio & Entry Screen Logic ---
-        const entryScreen = document.getElementById('entry-screen');
+        // --- Audio Logic ---
         const audio = document.getElementById('bg-audio');
         const musicBtn = document.getElementById('music-btn');
         let isPlaying = false;
 
-        entryScreen.addEventListener('click', () => {
-            entryScreen.style.opacity = '0';
-            setTimeout(() => {
-                entryScreen.style.display = 'none';
-            }, 800);
-
-            audio.play().then(() => {
-                isPlaying = true;
-                musicBtn.textContent = '⏸';
-            }).catch(e => console.log("Audio play failed:", e));
-        });
-
         musicBtn.addEventListener('click', () => {
             if (isPlaying) {
                 audio.pause();
-                musicBtn.textContent = '🎵';
+                musicBtn.textContent = '🎵 Play Music';
             } else {
                 audio.play();
-                musicBtn.textContent = '⏸';
+                musicBtn.textContent = '⏸ Pause';
             }
             isPlaying = !isPlaying;
         });

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>We're Getting Married!</title>
+    <title>Ruvanthika & Durga</title>
     <!-- Quirky 'Calistoga' for headings, Neat 'Outfit' for body -->
     <link href="https://fonts.googleapis.com/css2?family=Calistoga&family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
@@ -51,10 +51,10 @@
             text-align: center;
         }
         .hero h1 { 
-            font-size: 4rem; 
+            font-size: 3.5rem; 
             color: var(--peacock); 
             margin: 10px 0; 
-            line-height: 1.1;
+            line-height: 1.2;
         }
         .hero p { 
             color: var(--marigold); 
@@ -70,7 +70,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding-bottom: 40px;
+            padding-bottom: 20px;
         }
 
         /* Quirky Paisley/Mango shape for the photo */
@@ -85,7 +85,7 @@
             box-shadow: 15px 15px 0px var(--marigold); 
             border: 4px solid var(--peacock);
             background: white;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
         }
 
         .photo-wrapper img {
@@ -100,15 +100,25 @@
             100% { transform: scale(1.05) rotate(1deg); filter: brightness(1.05); }
         }
 
-        /* --- Cute Quote --- */
-        .cute-quote {
-            font-family: 'Calistoga', serif;
-            font-size: 1.6rem;
-            color: var(--rani-pink);
+        /* --- Our Story Section --- */
+        .our-story {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0 25px 40px 25px;
             text-align: center;
-            max-width: 80%;
-            margin: 0;
-            line-height: 1.4;
+            font-size: 1.15rem;
+            line-height: 1.7;
+            color: var(--text-dark);
+        }
+
+        .our-story p {
+            margin-bottom: 20px;
+        }
+
+        .our-story .highlight {
+            font-family: 'Calistoga', serif;
+            color: var(--rani-pink);
+            font-size: 1.3rem;
         }
 
         /* --- Events Section --- */
@@ -119,54 +129,70 @@
             text-align: center;
         }
 
-        .events h2 {
-            font-size: 3rem;
-            color: var(--rani-pink);
-            margin-bottom: 40px;
+        .events-title {
+            font-size: 2rem;
+            color: var(--peacock);
+            margin-bottom: 50px;
+            line-height: 1.4;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .events-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-        }
-
-        /* Quirky event cards */
-        .event-card {
+        /* Unified Event Card */
+        .unified-card {
             background: white;
             padding: 40px 30px;
             border-radius: 40px 10px 40px 10px; 
-            border: 3px solid var(--peacock);
-            box-shadow: 8px 8px 0px var(--peacock);
+            border: 3px solid var(--rani-pink);
+            box-shadow: 8px 8px 0px var(--rani-pink);
+            max-width: 650px;
+            margin: 0 auto;
             transition: transform 0.3s ease;
         }
 
-        .event-card:hover {
+        .unified-card:hover {
             transform: translate(-4px, -4px);
-            box-shadow: 12px 12px 0px var(--peacock);
+            box-shadow: 12px 12px 0px var(--rani-pink);
         }
 
-        .event-card h3 { 
+        .event-split {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .event-detail {
+            flex: 1;
+        }
+
+        .event-detail h3 { 
             color: var(--marigold); 
             font-size: 2.2rem; 
             margin-top: 0; 
             margin-bottom: 10px;
         }
         
-        .event-card p { 
+        .event-detail p { 
             font-size: 1.1rem; 
-            margin: 12px 0; 
+            margin: 5px 0; 
+        }
+
+        .event-detail .time {
+            font-weight: 700;
+            color: var(--text-dark);
         }
         
         .venue-highlight {
             font-weight: 700;
             color: var(--peacock);
             background: #E8F1F2;
-            padding: 8px 15px;
-            border-radius: 10px;
+            padding: 12px 20px;
+            border-radius: 15px;
             display: inline-block;
-            margin-top: 15px;
             border: 2px dashed var(--peacock);
+            font-size: 1.1rem;
         }
 
         /* --- Map Button Section --- */
@@ -180,20 +206,20 @@
             display: inline-flex;
             align-items: center;
             gap: 12px;
-            background-color: var(--rani-pink);
+            background-color: var(--marigold);
             color: white;
             text-decoration: none;
             padding: 16px 35px;
             border-radius: 50px;
             font-family: 'Calistoga', serif;
             font-size: 1.3rem;
-            box-shadow: 0 8px 20px rgba(214, 40, 40, 0.3);
+            box-shadow: 0 8px 20px rgba(242, 100, 25, 0.3);
             transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
         .map-btn:hover {
             transform: translateY(-5px) rotate(-2deg);
-            box-shadow: 0 12px 25px rgba(214, 40, 40, 0.4);
+            box-shadow: 0 12px 25px rgba(242, 100, 25, 0.4);
             background-color: var(--peacock);
         }
 
@@ -208,7 +234,7 @@
             position: fixed;
             bottom: 25px;
             right: 25px;
-            background-color: var(--marigold);
+            background-color: var(--rani-pink);
             color: white;
             border: 2px solid var(--peacock);
             border-radius: 50px;
@@ -227,13 +253,23 @@
         /* --- Desktop Responsive Adjustments --- */
         @media (min-width: 768px) {
             .hero h1 { font-size: 5rem; }
-            .cute-quote { font-size: 2rem; }
-            .events-grid { 
-                flex-direction: row; 
-                justify-content: center; 
+            .events-title { font-size: 2.5rem; }
+            .event-split {
+                flex-direction: row;
+                justify-content: space-between;
+                position: relative;
             }
-            .event-card { 
-                flex: 1; 
+            /* Add a subtle divider line between the two events on desktop */
+            .event-split::after {
+                content: '';
+                position: absolute;
+                top: 10%;
+                bottom: 10%;
+                left: 50%;
+                width: 2px;
+                background-color: var(--jasmine);
+                border-left: 2px dashed var(--peacock);
+                opacity: 0.3;
             }
         }
     </style>
@@ -249,37 +285,47 @@
 
     <!-- Header / Intro -->
     <section class="hero fade-in">
-        <p> Getting ready forever </p>
-        <h1> Durga & Ruvi </h1>
+        <p>Getting ready for forever</p>
+        <h1>Ruvi & Durga</h1>
         <p>October 13 & 14, 2026</p>
     </section>
 
-    <!-- Single Photo & Quote Section -->
+    <!-- Single Photo -->
     <section class="single-photo-container fade-in">
         <div class="photo-wrapper">
             <img src="./assets/couple.jpg" alt="Couple">
         </div>
-        <p class="cute-quote fade-in">"Two souls, one beautiful journey."</p>
+    </section>
+
+    <!-- Our Story Section -->
+    <section class="our-story fade-in">
+        <p>What started as “let’s take our time” quickly became “let’s get married.” Neither of us proposed, and we don't even remember deciding. It just... happened, like autocorrect for the heart.</p>
+        <p><span class="highlight">Ruvi</span> swears she manifested it, and <span class="highlight">Durga</span> is just glad the universe was on his side. It feels like we’ve known each other a lifetime, and now we are ready for the rest of it.</p>
     </section>
 
     <!-- Events Section -->
     <section class="events">
-        <h2 class="fade-in">Join the Sandadi</h2>
+        <h2 class="events-title quirky-font fade-in">Join us as we celebrate a love story we still can't quite explain!</h2>
         
-        <div class="events-grid">
-            <div class="event-card fade-in">
-                <h3>Reception</h3>
-                <p><strong>Date:</strong> October 13, 2026</p>
-                <p><strong>Time:</strong> 7:00 PM Onwards</p>
-                <div class="venue-highlight">📍 Tamil Nadu Police Convention Centre, Avadi</div>
+        <!-- Unified Event Card -->
+        <div class="unified-card fade-in">
+            <div class="event-split">
+                
+                <div class="event-detail">
+                    <h3>Reception</h3>
+                    <p>Tuesday, Oct 13, 2026</p>
+                    <p class="time">7:00 PM Onwards</p>
+                </div>
+                
+                <div class="event-detail">
+                    <h3>Muhurtham</h3>
+                    <p>Wednesday, Oct 14, 2026</p>
+                    <p class="time">6:00 AM – 7:30 AM</p>
+                </div>
+                
             </div>
-
-            <div class="event-card fade-in">
-                <h3>Muhurtham</h3>
-                <p><strong>Date:</strong> October 14, 2026</p>
-                <p><strong>Time:</strong> 6:00 AM to 7:30 AM</p>
-                <div class="venue-highlight">📍 Tamil Nadu Police Convention Centre, Avadi</div>
-            </div>
+            
+            <div class="venue-highlight">📍 Tamil Nadu Police Convention Centre, Avadi</div>
         </div>
 
         <!-- Google Maps Button -->

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ruvanthika & Durga</title>
+    <title>Ruvi & Durga</title>
     <!-- Quirky 'Calistoga' for headings, Neat 'Outfit' for body -->
     <link href="https://fonts.googleapis.com/css2?family=Calistoga&family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
@@ -22,12 +22,80 @@
             background-color: var(--jasmine);
             color: var(--text-dark);
             overflow-x: hidden;
+            position: relative;
         }
 
         h1, h2, h3, .quirky-font {
             font-family: 'Calistoga', serif;
             font-weight: normal;
             letter-spacing: 1px;
+        }
+
+        /* --- Running Blue Ribbon (Moved to middle, updated color) --- */
+        .story-ribbon {
+            background-color: var(--peacock); /* Changed to match heading color */
+            color: #FFFFFF;
+            width: 100vw;
+            padding: 15px 0;
+            position: relative; /* Changed from fixed */
+            overflow: hidden;
+            white-space: nowrap;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 600;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            margin: 20px 0 40px 0;
+            z-index: 20;
+        }
+
+        .running-text {
+            display: inline-block;
+            padding-left: 100%;
+            animation: scroll-left 25s linear infinite;
+        }
+
+        @keyframes scroll-left {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(-100%, 0); }
+        }
+
+        /* --- Enhanced Fluttering Marigold Petals --- */
+        #petal-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none; 
+            z-index: 10;
+            overflow: hidden;
+        }
+
+        .petal {
+            position: absolute;
+            top: -20px;
+            width: 18px;
+            height: 18px;
+            background-color: var(--marigold);
+            border-radius: 50% 0 50% 0;
+            opacity: 0.7;
+            animation: flutter linear infinite;
+            box-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .petal:nth-child(even) {
+            background-color: var(--rani-pink);
+            border-radius: 0 50% 0 50%;
+        }
+
+        @keyframes flutter {
+            0% { transform: translateY(-20px) translateX(0) rotate(0deg) scale(1); opacity: 0; }
+            20% { opacity: 0.8; transform: translateY(20vh) translateX(25px) rotate(90deg) scale(0.95); }
+            50% { transform: translateY(50vh) translateX(-20px) rotate(180deg) scale(0.9); }
+            80% { opacity: 0.8; transform: translateY(80vh) translateX(25px) rotate(270deg) scale(0.85); }
+            100% { transform: translateY(105vh) translateX(-10px) rotate(360deg) scale(0.8); opacity: 0; }
         }
 
         /* --- Animations --- */
@@ -43,25 +111,28 @@
 
         /* --- Hero Section --- */
         .hero {
-            padding: 60px 20px 20px 20px;
+            padding: 60px 20px 20px 20px; 
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
             align-items: center;
             text-align: center;
+            position: relative;
+            z-index: 20;
         }
         .hero h1 { 
-            font-size: 3.5rem; 
+            font-size: 3.8rem; 
             color: var(--peacock); 
             margin: 10px 0; 
             line-height: 1.2;
+            text-shadow: 2px 3px 0px rgba(11, 79, 108, 0.1); 
         }
         .hero p { 
             color: var(--marigold); 
             font-weight: 700; 
             text-transform: uppercase; 
             letter-spacing: 3px;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
         }
 
         /* --- Single Photo Section --- */
@@ -71,9 +142,10 @@
             flex-direction: column;
             align-items: center;
             padding-bottom: 20px;
+            position: relative;
+            z-index: 20;
         }
 
-        /* Quirky Paisley/Mango shape for the photo */
         .photo-wrapper {
             width: 85%;
             max-width: 400px;
@@ -82,17 +154,22 @@
             position: relative;
             border-radius: 80px 15px 80px 15px; 
             overflow: hidden;
-            box-shadow: 15px 15px 0px var(--marigold); 
+            box-shadow: 15px 15px 0px var(--marigold), 0 20px 40px rgba(0,0,0,0.08); 
             border: 4px solid var(--peacock);
             background: white;
             margin-bottom: 40px;
+            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .photo-wrapper:hover {
+            transform: translateY(-5px); 
         }
 
         .photo-wrapper img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            animation: softFade 5s infinite alternate ease-in-out;
+            animation: softFade 6s infinite alternate ease-in-out;
         }
 
         @keyframes softFade {
@@ -104,29 +181,56 @@
         .our-story {
             max-width: 600px;
             margin: 0 auto;
-            padding: 0 25px 40px 25px;
+            padding: 0 25px 20px 25px; 
             text-align: center;
             font-size: 1.15rem;
-            line-height: 1.7;
+            line-height: 1.8;
             color: var(--text-dark);
+            position: relative;
+            z-index: 20;
         }
 
-        .our-story p {
-            margin-bottom: 20px;
-        }
+        .our-story p { margin-bottom: 20px; }
 
         .our-story .highlight {
             font-family: 'Calistoga', serif;
             color: var(--rani-pink);
             font-size: 1.3rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        /* --- Enhanced Spinning Kolam Divider --- */
+        .kolam-divider {
+            text-align: center;
+            margin: 20px 0 50px 0;
+            display: flex;
+            justify-content: center;
+            position: relative;
+            z-index: 20;
+            filter: drop-shadow(0px 8px 10px rgba(11, 79, 108, 0.15));
+        }
+        
+        .kolam-icon {
+            width: 75px;
+            height: 75px;
+            fill: var(--peacock);
+            opacity: 0.85;
+            animation: spinKolam 25s linear infinite;
+        }
+
+        @keyframes spinKolam {
+            100% { transform: rotate(360deg); }
         }
 
         /* --- Events Section --- */
         .events {
-            padding: 40px 20px;
+            padding: 20px 20px 40px 20px;
             max-width: 900px;
             margin: 0 auto;
             text-align: center;
+            position: relative;
+            z-index: 20;
         }
 
         .events-title {
@@ -139,21 +243,21 @@
             margin-right: auto;
         }
 
-        /* Unified Event Card */
+        /* Enhanced Unified Event Card */
         .unified-card {
             background: white;
             padding: 40px 30px;
             border-radius: 40px 10px 40px 10px; 
             border: 3px solid var(--rani-pink);
-            box-shadow: 8px 8px 0px var(--rani-pink);
+            box-shadow: 8px 8px 0px var(--rani-pink), 0 15px 35px rgba(214, 40, 40, 0.08); 
             max-width: 650px;
-            margin: 0 auto;
-            transition: transform 0.3s ease;
+            margin: 0 auto 30px auto; 
+            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
         .unified-card:hover {
-            transform: translate(-4px, -4px);
-            box-shadow: 12px 12px 0px var(--rani-pink);
+            transform: translate(-6px, -6px);
+            box-shadow: 14px 14px 0px var(--rani-pink), 0 20px 40px rgba(214, 40, 40, 0.15);
         }
 
         .event-split {
@@ -163,26 +267,26 @@
             margin-bottom: 30px;
         }
 
-        .event-detail {
-            flex: 1;
-        }
+        .event-detail { flex: 1; }
 
         .event-detail h3 { 
             color: var(--marigold); 
             font-size: 2.2rem; 
             margin-top: 0; 
-            margin-bottom: 10px;
-        }
-        
-        .event-detail p { 
-            font-size: 1.1rem; 
-            margin: 5px 0; 
+            margin-bottom: 5px;
         }
 
-        .event-detail .time {
-            font-weight: 700;
-            color: var(--text-dark);
+        /* New Tagline Style */
+        .event-detail .tagline {
+            font-size: 0.95rem;
+            color: #666;
+            font-style: italic;
+            margin: 0 0 15px 0;
+            line-height: 1.3;
         }
+        
+        .event-detail p { font-size: 1.1rem; margin: 5px 0; }
+        .event-detail .time { font-weight: 700; color: var(--text-dark); }
         
         .venue-highlight {
             font-weight: 700;
@@ -193,12 +297,63 @@
             display: inline-block;
             border: 2px dashed var(--peacock);
             font-size: 1.1rem;
+            transition: background 0.3s ease;
+        }
+        
+        .unified-card:hover .venue-highlight {
+            background: #D9EBEC;
+        }
+
+        /* --- Add to Calendar Section --- */
+        .calendar-section {
+            margin-top: 10px;
+            margin-bottom: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .calendar-section p {
+            font-family: 'Calistoga', serif;
+            color: var(--peacock);
+            font-size: 1.2rem;
+            margin: 0;
+        }
+
+        .cal-btn-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cal-btn {
+            background: transparent;
+            color: var(--peacock);
+            border: 2px solid var(--peacock);
+            padding: 8px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .cal-btn:hover {
+            background: var(--peacock);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(11, 79, 108, 0.2);
         }
 
         /* --- Map Button Section --- */
         .map-section {
-            margin-top: 50px;
-            margin-bottom: 40px;
+            margin-top: 30px;
+            margin-bottom: 60px;
             text-align: center;
         }
         
@@ -215,19 +370,17 @@
             font-size: 1.3rem;
             box-shadow: 0 8px 20px rgba(242, 100, 25, 0.3);
             transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+            position: relative;
+            z-index: 20;
         }
 
         .map-btn:hover {
-            transform: translateY(-5px) rotate(-2deg);
-            box-shadow: 0 12px 25px rgba(242, 100, 25, 0.4);
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 15px 25px rgba(242, 100, 25, 0.4);
             background-color: var(--peacock);
         }
 
-        .map-icon {
-            width: 24px;
-            height: 24px;
-            fill: white;
-        }
+        .map-icon { width: 24px; height: 24px; fill: white; }
 
         /* --- Floating Music Control --- */
         #music-btn {
@@ -243,11 +396,16 @@
             cursor: pointer;
             z-index: 1000;
             box-shadow: 4px 4px 0px var(--peacock);
-            transition: transform 0.2s;
+            transition: all 0.2s;
         }
+        
+        #music-btn:hover {
+            background-color: var(--marigold);
+        }
+        
         #music-btn:active {
-            transform: translate(2px, 2px);
-            box-shadow: 2px 2px 0px var(--peacock);
+            transform: translate(3px, 3px);
+            box-shadow: 1px 1px 0px var(--peacock);
         }
 
         /* --- Desktop Responsive Adjustments --- */
@@ -259,13 +417,10 @@
                 justify-content: space-between;
                 position: relative;
             }
-            /* Add a subtle divider line between the two events on desktop */
             .event-split::after {
                 content: '';
                 position: absolute;
-                top: 10%;
-                bottom: 10%;
-                left: 50%;
+                top: 10%; bottom: 10%; left: 50%;
                 width: 2px;
                 background-color: var(--jasmine);
                 border-left: 2px dashed var(--peacock);
@@ -276,6 +431,9 @@
 </head>
 <body>
 
+    <!-- Falling Petals Container -->
+    <div id="petal-container"></div>
+
     <!-- Background Music -->
     <audio id="bg-audio" loop>
         <source src="./assets/music.mp3" type="audio/mpeg">
@@ -285,7 +443,7 @@
 
     <!-- Header / Intro -->
     <section class="hero fade-in">
-        <p>Getting ready for forever</p>
+        <p>Getting ready forever</p>
         <h1>Ruvi & Durga</h1>
         <p>October 13 & 14, 2026</p>
     </section>
@@ -300,8 +458,25 @@
     <!-- Our Story Section -->
     <section class="our-story fade-in">
         <p>What started as “let’s take our time” quickly became “let’s get married.” Neither of us proposed, and we don't even remember deciding. It just... happened, like autocorrect for the heart.</p>
-        <p><span class="highlight">Ruvi</span> swears she manifested it, and <span class="highlight">Durga</span> is just glad the universe was on his side. It feels like we’ve known each other a lifetime, and now we are ready for the rest of it.</p>
+        <p><span class="highlight">Ruvi</span> swears she manifested it, and <span class="highlight">Durga</span> is just glad the universe was on his side. It feels like we’ve known each other a lifetime, and now we are ready for the rest of it. We would be absolutely thrilled to have you join us to celebrate!</p>
     </section>
+
+    <!-- Running Blue Ribbon (Moved Here!) -->
+    <div class="story-ribbon fade-in">
+        <div class="running-text">
+            RUVI AND DURGA ARE GETTING MARRIED &nbsp; ✨ &nbsp; RUVI AND DURGA ARE GETTING MARRIED &nbsp; ✨ &nbsp; RUVI AND DURGA ARE GETTING MARRIED &nbsp; ✨ &nbsp; RUVI AND DURGA ARE GETTING MARRIED
+        </div>
+    </div>
+
+    <!-- Spinning Kolam Divider -->
+    <div class="kolam-divider fade-in">
+        <svg class="kolam-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <path d="M50 0C55 20 70 30 100 50C70 70 55 80 50 100C45 80 30 70 0 50C30 30 45 20 50 0Z" />
+            <path d="M15 15C30 25 40 40 50 50C40 60 30 75 15 85C25 70 40 60 50 50C40 40 25 30 15 15Z" />
+            <path d="M85 15C70 25 60 40 50 50C60 60 70 75 85 85C75 70 60 60 50 50C60 40 75 30 85 15Z" />
+            <circle cx="50" cy="50" r="10" fill="var(--marigold)" />
+        </svg>
+    </div>
 
     <!-- Events Section -->
     <section class="events">
@@ -313,12 +488,14 @@
                 
                 <div class="event-detail">
                     <h3>Reception</h3>
+                    <p class="tagline">(Where we smile until our cheeks hurt and you eat until your stomach hurts 🍽️)</p>
                     <p>Tuesday, Oct 13, 2026</p>
                     <p class="time">7:00 PM Onwards</p>
                 </div>
                 
                 <div class="event-detail">
                     <h3>Muhurtham</h3>
+                    <p class="tagline">(The main event! If you wake up for this, we know you actually love us 🌅)</p>
                     <p>Wednesday, Oct 14, 2026</p>
                     <p class="time">6:00 AM – 7:30 AM</p>
                 </div>
@@ -326,6 +503,24 @@
             </div>
             
             <div class="venue-highlight">📍 Tamil Nadu Police Convention Centre, Avadi</div>
+        </div>
+
+        <!-- Add to Calendar Buttons -->
+        <div class="calendar-section fade-in">
+            <p>Save to Calendar</p>
+            <div class="cal-btn-group">
+                <!-- Google Calendar Link (Calculated for UTC based on India Standard Time) -->
+                <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=RUVI+%26+Durga%27s+Wedding&dates=20261013T133000Z/20261014T020000Z&details=Join+us+to+celebrate+our+wedding!+Reception+on+Oct+13th+at+7+PM,+Muhurtham+on+Oct+14th+at+6+AM.&location=Tamil+Nadu+Police+Convention+Centre,+Avadi" 
+                   target="_blank" class="cal-btn">
+                    📅 Google
+                </a>
+                
+                <!-- ICS File Link for Apple / Outlook -->
+                <a href="data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0ADTSTART:20261013T133000Z%0ADTEND:20261014T020000Z%0ASUMMARY:RUVI%20%26%20Durga%27s%20Wedding%0ADESCRIPTION:Join%20us%20to%20celebrate%20our%20wedding!%20Reception%20on%20Oct%2013th%20at%207%20PM%2C%20Muhurtham%20on%20Oct%2014th%20at%206%20AM.%0ALOCATION:Tamil%20Nadu%20Police%20Convention%20Centre%2C%20Avadi%0AEND:VEVENT%0AEND:VCALENDAR" 
+                   download="RUVI_Durga_Wedding.ics" class="cal-btn">
+                    🍎 Apple / Outlook
+                </a>
+            </div>
         </div>
 
         <!-- Google Maps Button -->
@@ -340,6 +535,22 @@
     </section>
 
     <script>
+        // --- Enhanced Falling Petals Script ---
+        const petalContainer = document.getElementById('petal-container');
+        const petalCount = 25; 
+
+        for (let i = 0; i < petalCount; i++) {
+            let petal = document.createElement('div');
+            petal.classList.add('petal');
+            
+            // Randomize position, duration, and delay
+            petal.style.left = Math.random() * 100 + 'vw';
+            petal.style.animationDuration = (Math.random() * 5 + 5) + 's'; 
+            petal.style.animationDelay = (Math.random() * 6) + 's';
+            
+            petalContainer.appendChild(petal);
+        }
+
         // --- Audio Logic ---
         const audio = document.getElementById('bg-audio');
         const musicBtn = document.getElementById('music-btn');
